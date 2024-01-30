@@ -1,0 +1,122 @@
+@import url('./common.css');
+
+/* 노토산스 글씨체 */
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #fff;
+}
+
+/* header style */
+header {
+  background: orange;
+  padding: 20px 0;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+header .inner-header {
+  background: tomato;
+  width: 92%;
+  /* 요소가 한 개니까 마진 0 auto로 가운데로 배치, 굳이 flex 쓸 필요 없음 */
+  margin: 0 auto;
+  display: flex;
+
+  /* flex-direction을 따로 지정하지 않아 기본 값인 row, row를 기준으로  */
+  align-items: center;
+}
+
+header .inner-header .logo {
+  /* flex-grow: 1, 로고 영역이 1만 차지하게  */
+  flex: 1;
+
+  border: 1px solid aqua;
+}
+
+header .inner-header .intro-text {
+  flex: 4;
+  font-weight: 700;
+  font-size: 1.3em;
+  text-transform: uppercase;
+
+  border: 1px solid black;
+}
+
+header .inner-header .menu-open {
+  border: 2px solid greenyellow;
+  flex: 1;
+  font-weight: 700;
+  font-size: 1.2em;
+  align-self: stretch;
+
+  /* menu-open이 갖는 자식요소들을 배치하기 위해 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header .inner-header .menu-open .lnr-menu {
+  font-size: 33px;
+  margin-left: 15px;
+}
+
+header .inner-header .logo img {
+  height: 60px;
+}
+
+/* gnb -> 숨겨진 menu, 햄버거 버튼 클릭시 등장 */
+
+header .gnb {
+  background: #000;
+  color: #666;
+  font-weight: 700;
+  font-size: 40px;
+  padding: 70px 100px;
+
+  /* 디바이스가 작아지거나 커지더라도
+  크기가 화면 자체를 가득 채우고, */
+  height: 100vh;
+
+  position: fixed;
+
+  /* 화면의 오른쪽을 기준으로 -100%를 주면 화면 바깥쪽으로 밀려나있는 상태로 지정한다. */
+  right: -100%;
+  top: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+
+  transition: 0.8s;
+}
+
+/* 클래스명이 gnb인 nav가 햄버거 버튼을 누르면, 클래스명이 gnb이면서 open 이라는 클래스명이 생기고, 바깥에 빠져있던 클래스명이 gnb인 nav가 right의 값 0을 갖게 되면서 화면에 나타난다. */
+header .gnb.open {
+  right: 0;
+}
+
+
+header .gnb .close {
+  color: #ccc;
+  margin-left: 150px;
+}
+
+header .gnb ul {
+  line-height: 1.7;
+}
+
+header .gnb ul li:hover,
+header .gnb ul li.active {
+  color: #fff;
+}
+
+
+
+
+
+
+
