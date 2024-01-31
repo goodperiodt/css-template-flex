@@ -11,7 +11,6 @@ body {
 
 /* header style */
 header {
-  background: orange;
   padding: 20px 0;
   width: 100%;
 
@@ -21,7 +20,6 @@ header {
 }
 
 header .inner-header {
-  background: tomato;
   width: 92%;
   /* 요소가 한 개니까 마진 0 auto로 가운데로 배치, 굳이 flex 쓸 필요 없음 */
   margin: 0 auto;
@@ -35,7 +33,6 @@ header .inner-header .logo {
   /* flex-grow: 1, 로고 영역이 1만 차지하게  */
   flex: 1;
 
-  border: 1px solid aqua;
 }
 
 header .inner-header .intro-text {
@@ -44,11 +41,9 @@ header .inner-header .intro-text {
   font-size: 1.3em;
   text-transform: uppercase;
 
-  border: 1px solid black;
 }
 
 header .inner-header .menu-open {
-  border: 2px solid greenyellow;
   flex: 1;
   font-weight: 700;
   font-size: 1.2em;
@@ -113,6 +108,59 @@ header .gnb ul li:hover,
 header .gnb ul li.active {
   color: #fff;
 }
+
+/* section visual style */
+section.visual .slide li {
+  background: violet;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 사진을 background 속성으로 지정했다면, position으로 적용해서 사진을 올릴 수 있다. */
+section.visual .slide li img {
+  width: 100%;
+  position: absolute;
+  top: -70px;
+}
+
+/* ? */
+section.visual .slide li .txt {  
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translate(-20%, -50%);
+  font-size: 18px;
+
+  /* 그림자 효과 지정 */
+  /* 그림자 x축, y축, 그림자가 얼마나 투명해질것인지, 숫자가 작을수록 그림자가 짙다, 그림자 색깔 */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+
+
+}
+
+section.visual .slide li .txt h3 {
+  margin: 30px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+section.visual .slide .scroll {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ccc;
+
+  /* ? */
+  transform: rotate(-90deg);
+}
+
+
+
+
 
 
 
