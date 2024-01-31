@@ -158,11 +158,201 @@ section.visual .slide .scroll {
   transform: rotate(-90deg);
 }
 
+/* section.contents style */
+section.contents {
+  background: #1b1b1b;
+  padding: 120px 0;
+}
 
+/* main-text */
+section.contents .main-text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 25px;
 
+  display: flex;
+  position: relative;
+}
 
+/* 원 구현 */
+section.contents .main-text::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffec03;
 
+  /* 원 배치 */
+  position: absolute;
+  left: 70px;
+  top: 100px;
+}
 
+section.contents .main-text::after {
+  content: '”';
+  font-size: 300px;
+
+  position: absolute;
+  left: 0;
+  top: 100px;
+}
+
+/* ----- */
+
+/* section.contents .main-text h3 {
+  flex: 1;
+}
+section.contents .main-text p {
+  line-height: 1.3;
+  
+  flex: 3;
+}
+
+section.contents .main-text p span {
+  display: block;
+  margin-top: 30px;
+
+  font-size: 20px;
+  color: #ccc;
+} */
+section.contents .main-text h3{
+  flex: 1;
+  font-weight: 700;
+}
+
+section.contents .main-text p {
+  flex: 2;
+
+  font-size: 23px;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+section.contents .main-text p span {
+  display: block;
+  
+  font-size: 20px;
+  color: #999;
+  margin-top: 30px;
+}
+
+/* section.contents */
+section.contents .project .top {
+  width: 80%;
+  margin: 200px auto 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section.contents .project .top h3 {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+section.contents .project .top a {
+  font-size: 18px;
+}
+
+section.contents .project ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+section.contents .project ul li {
+  width: 24%;
+  height: 400px;
+
+  border: 4px solid #fff;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+section.contents .project ul li a::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  background: rgba(27, 27, 27, 0.8);
+
+  position: absolute;
+  transition: 0.6s;
+}
+
+section.contents .project ul li a:hover::before {
+  width: 100%;
+}
+
+section.contents .project ul li img {
+  width: 100%;
+}
+
+section.contents .project ul li .name {
+  background: #1b1b1b;
+  font-size: 22px;
+  text-align: right;
+  width: 250px;
+  padding: 15px;
+
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  opacity: 0;
+}
+
+section.contents .project ul li a:hover .name {
+  animation: show-name 1s both;
+}
+
+@keyframes show-name {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.contents .partner {
+  width: 80%;
+  margin: 170px auto 100px;
+}
+
+section.contents .partner h3 {
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+
+/* ul이 컨테이너 ul안에 있는 li들이 items */
+section.contents .partner ul {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section.contents .partner ul li {
+  /* 부모 요소의 width가 100%를 기준으로 25%씩, 부모 요소가 flex-wrap: wrap; 속성이 지정되어 있기에 items 들이 두줄로 변한다. */
+  width: 25%;
+  margin-bottom: 80px;
+
+  display: flex;
+  
+  /* 가운데 정렬이 왜 안먹을까? display:flex; 지정안해서 가운데 정렬 안먹음 */
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.4;
+}
+
+section.contents .partner ul li:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
 
 
 
